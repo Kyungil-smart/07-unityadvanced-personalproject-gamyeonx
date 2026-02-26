@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class ArrowShot : MonoBehaviour
 {
-    [SerializeField] private int _arrowPower = 15;
+    [SerializeField] private int _arrowPower = 10;
+    [SerializeField] private float _arrowPowerY = 5f;
     [SerializeField] private Rigidbody2D _rigidbody;
 
     private void Awake()
@@ -12,6 +13,7 @@ public class ArrowShot : MonoBehaviour
 
     private void Start()
     {
-        _rigidbody.linearVelocity = transform.right * _arrowPower;
+        Destroy(gameObject, 1.6f);
+        _rigidbody.linearVelocity = new Vector2(transform.right.x * _arrowPower, _arrowPowerY);
     }
 }

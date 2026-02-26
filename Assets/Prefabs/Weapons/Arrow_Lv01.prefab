@@ -167,7 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318e56ff517569e48b554894dacc4502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArrowShot
-  _arrowPower: 20
+  _arrowPower: 6
+  _arrowPowerY: 2.8
   _rigidbody: {fileID: 0}
 --- !u!95 &461724725656456043
 Animator:
@@ -207,7 +208,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2d946b102b566f34284d8126b2e4b2fb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
