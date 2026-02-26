@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private InputAction _runAction;
 
     [SerializeField] private LayerMask _jumpCheckLayer;
-    [SerializeField] private float _rayDistance = 1.1f;
+    [SerializeField] private float _rayDistance = 0.1f;
 
     private bool _runInput = false;
 
@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody.linearVelocity = new Vector2(_moveInput.x * _moveSpeed, _rigidbody.linearVelocity.y);
         IsGrounded();
-        Debug.DrawRay(transform.position, Vector2.down * 1.1f, Color.red);
     }
 
     private void Update()
@@ -84,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, _rayDistance, _jumpCheckLayer);
+        return Physics2D.BoxCast(transform.position, new Vector2(0.8f, 0.1f), 0f, Vector2.down, _rayDistance, _jumpCheckLayer);
     }
 
     public void OnJump(InputAction.CallbackContext ctx)
@@ -127,6 +126,6 @@ public class PlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, Vector2.down * _rayDistance);
+        Gizmos.DrawWireCube(transform.position + Vector3.down * _rayDistance, new Vector3(0.8f, 0.1f, 0f));
     }
 }
