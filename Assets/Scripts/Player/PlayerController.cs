@@ -1,5 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private InputAction _moveAction;
     private InputAction _jumpAction;
     private InputAction _runAction;
+
+    private bool _runInput = false;
 
     private void Awake()
     {
@@ -30,7 +34,8 @@ public class PlayerController : MonoBehaviour
         _moveAction.canceled += MoveCancel;
         //_jumpAction.started += OnJump;
         //_jumpAction.canceled += JumpCancel;
-        //_runAction.started += OnRun;
+        _runAction.started += OnRun;
+        _runAction.canceled += RunCancel;
     }
 
     private void FixedUpdate()
@@ -50,8 +55,8 @@ public class PlayerController : MonoBehaviour
         }
 
         _animator.SetFloat("MoveSpeed", Mathf.Abs(_moveInput.x));
+        _animator.SetBool("IsRun", _runInput);
     }
-
 
     private void OnDisable()
     {
@@ -59,7 +64,8 @@ public class PlayerController : MonoBehaviour
         _moveAction.canceled -= MoveCancel;
         //_jumpAction.started -= OnJump;
         //_jumpAction.canceled -= JumpCancel;
-        //_runAction.started -= OnRun;
+        _runAction.started -= OnRun;
+        _runAction.canceled -= RunCancel;
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -84,6 +90,19 @@ public class PlayerController : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext ctx)
     {
+        if(ctx.started)
+        {
+            _runInput = true;
+            _moveSpeed += 2;
+        }    
+    }
 
+    public void RunCancel(InputAction.CallbackContext ctx)
+    {
+        if(ctx.canceled)
+        {
+            _runInput = false;
+            _moveSpeed -= 2;
+        }
     }
 }

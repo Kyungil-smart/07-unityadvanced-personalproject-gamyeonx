@@ -879,6 +879,31 @@ Transform:
   - {fileID: 893675742}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1960347986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3241182037313295051, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
+  m_PrefabInstance: {fileID: 1000157815293334854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1960347990 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5660971983591541800, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
+  m_PrefabInstance: {fileID: 1000157815293334854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1960347993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960347986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ad299181ca4de459a91c0a257acf5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  _moveSpeed: 3
+  _jumpHeight: 0
+  _animator: {fileID: 1960347990}
 --- !u!1001 &1000157815293334854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -890,6 +915,10 @@ PrefabInstance:
     - target: {fileID: 3241182037313295051, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784497036521261553, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8482743353867006007, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -934,7 +963,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3241182037313295051, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1960347993}
   m_SourcePrefab: {fileID: 100100000, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
