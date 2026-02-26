@@ -53,9 +53,9 @@ public class PlayerController : MonoBehaviour
         if (_moveInput.x != 0)
         {
             if (_moveInput.x > 0)
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             else if (_moveInput.x < 0)
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         _animator.SetFloat("MoveSpeed", Mathf.Abs(_moveInput.x));
