@@ -5,6 +5,9 @@ public class ArrowShot : MonoBehaviour
     [SerializeField] private int _arrowPower = 10;
     [SerializeField] private float _arrowPowerY = 5f;
     [SerializeField] private Rigidbody2D _rigidbody;
+    public int Attack { get; set; }
+
+
 
     private void Awake()
     {
