@@ -1,3 +1,4 @@
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private InputAction _jumpAction;
     private InputAction _runAction;
 
-    [SerializeField] private LayerMask _jumpCheckLayer;
+    private LayerMask _jumpCheckLayer;
     [SerializeField] private float _rayDistance = 0.1f;
 
     private bool _runInput = false;
@@ -39,6 +40,11 @@ public class PlayerController : MonoBehaviour
         _jumpAction.canceled += JumpCancel;
         _runAction.started += OnRun;
         _runAction.canceled += RunCancel;
+    }
+
+    private void Start()
+    {
+        _jumpCheckLayer = LayerMask.GetMask("Ground", "Monster");
     }
 
     private void FixedUpdate()
