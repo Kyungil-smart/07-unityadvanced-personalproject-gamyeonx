@@ -25,6 +25,21 @@ public partial class MoveToTargetAction : Action
 
         if (distance <= DetectRange.Value)
         {
+            float dirX = Target.Value.transform.position.x - Self.Value.transform.position.x;
+
+            if(dirX != 0)
+            {
+                if (dirX > 0)
+                {
+                    Self.Value.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    Self.Value.transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
+                
+            }
+
             Self.Value.transform.position = Vector2.MoveTowards(
             Self.Value.transform.position,
             Target.Value.transform.position,
