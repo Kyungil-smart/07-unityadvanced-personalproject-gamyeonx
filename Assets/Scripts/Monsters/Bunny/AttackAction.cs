@@ -12,8 +12,6 @@ public partial class AttackAction : Action
     [SerializeReference] public BlackboardVariable<GameObject> Target;
     [SerializeReference] public BlackboardVariable<float> AttackRange;
 
-    private bool _attacked = false;
-
     protected override Status OnStart()
     {
         return Status.Running;
@@ -21,15 +19,11 @@ public partial class AttackAction : Action
 
     protected override Status OnUpdate()
     {
-        if (_attacked)
-            return Status.Success;
-
         float distance = Vector2.Distance(Self.Value.transform.position, Target.Value.transform.position);
 
         if (distance <= AttackRange.Value)
         {
             PlayerManager.Instance.TakeDamege(10);
-            _attacked = true;
             return Status.Success;
             }
 
@@ -38,7 +32,6 @@ public partial class AttackAction : Action
 
     protected override void OnEnd()
     {
-        _attacked = false;
     }
 }
 
