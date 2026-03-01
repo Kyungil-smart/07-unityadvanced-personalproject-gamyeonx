@@ -23,8 +23,7 @@ public partial class AttackAction : Action
 
         if (distance <= AttackRange.Value)
         {
-            Debug.Log("어택!!");
-            return Status.Success;
+          
         }
 
         return Status.Failure;

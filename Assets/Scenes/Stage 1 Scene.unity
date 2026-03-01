@@ -1399,7 +1399,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1739694522433587811, guid: 41f5c5a0c17a54349a09d4205cc20f0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.726
+      value: 21.97
       objectReference: {fileID: 0}
     - target: {fileID: 1739694522433587811, guid: 41f5c5a0c17a54349a09d4205cc20f0f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1527,55 +1527,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157735240}
   m_CullTransparentMesh: 1
---- !u!1 &257561353 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3878129463088959134, guid: 63db22125ec15144da917a70de81cd74, type: 3}
-  m_PrefabInstance: {fileID: 6133047329315632241}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &257561354 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3285031163889679847, guid: 63db22125ec15144da917a70de81cd74, type: 3}
   m_PrefabInstance: {fileID: 6133047329315632241}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &257561355 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8485290057876897345, guid: 63db22125ec15144da917a70de81cd74, type: 3}
-  m_PrefabInstance: {fileID: 6133047329315632241}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257561353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
---- !u!114 &257561356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257561353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0668bafc8e02bc44e89ba4b5f05913fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SilderBarUI
-  _slider: {fileID: 257561355}
-  _fillImage: {fileID: 756693815}
---- !u!114 &257561358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257561353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0668bafc8e02bc44e89ba4b5f05913fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SilderBarUI
-  _slider: {fileID: 257561355}
-  _fillImage: {fileID: 756693815}
 --- !u!1 &305007275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,17 +2907,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &756693815 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5236166530725907175, guid: 63db22125ec15144da917a70de81cd74, type: 3}
-  m_PrefabInstance: {fileID: 6133047329315632241}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &893675741
 GameObject:
   m_ObjectHideFlags: 0
@@ -8074,11 +8019,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1739694522433587811, guid: 41f5c5a0c17a54349a09d4205cc20f0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.379
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 1739694522433587811, guid: 41f5c5a0c17a54349a09d4205cc20f0f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.505
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 1739694522433587811, guid: 41f5c5a0c17a54349a09d4205cc20f0f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10034,20 +9979,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HP_Slider
       objectReference: {fileID: 0}
-    - target: {fileID: 8485290057876897345, guid: 63db22125ec15144da917a70de81cd74, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3878129463088959134, guid: 63db22125ec15144da917a70de81cd74, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 257561356}
-    - targetCorrespondingSourceObject: {fileID: 3878129463088959134, guid: 63db22125ec15144da917a70de81cd74, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 257561358}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63db22125ec15144da917a70de81cd74, type: 3}
 --- !u!1001 &7975272285633049696
 PrefabInstance:
@@ -10105,6 +10040,10 @@ PrefabInstance:
       propertyPath: managedReferences[439764581300830622].m_Value
       value: 
       objectReference: {fileID: 51499733}
+    - target: {fileID: 7263445191522226273, guid: 41f5c5a0c17a54349a09d4205cc20f0f, type: 3}
+      propertyPath: m_Mass
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
