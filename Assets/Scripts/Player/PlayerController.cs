@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,17 +13,22 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Animator _animator;
 
+    [SerializeField] private GameObject pauseUI;
+
     private Rigidbody2D _rigidbody;
     private Vector2 _moveInput;
 
     private InputAction _moveAction;
     private InputAction _jumpAction;
     private InputAction _runAction;
+    private InputAction _pauseAction;
 
     private LayerMask _jumpCheckLayer;
     [SerializeField] private float _rayDistance = 0.1f;
 
     private bool _runInput = false;
+
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -30,6 +37,7 @@ public class PlayerController : MonoBehaviour
         _moveAction = InputSystem.actions["Move"];
         _jumpAction = InputSystem.actions["Jump"];
         _runAction = InputSystem.actions["Run"];
+        _pauseAction = InputSystem.actions["Pause"];
     }
 
     private void OnEnable()
@@ -40,6 +48,7 @@ public class PlayerController : MonoBehaviour
         _jumpAction.canceled += JumpCancel;
         _runAction.started += OnRun;
         _runAction.canceled += RunCancel;
+        _pauseAction.started += OnPause;
     }
 
     private void Start()
@@ -75,6 +84,7 @@ public class PlayerController : MonoBehaviour
         _jumpAction.canceled -= JumpCancel;
         _runAction.started -= OnRun;
         _runAction.canceled -= RunCancel;
+        _pauseAction.started -= OnPause;
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -127,6 +137,18 @@ public class PlayerController : MonoBehaviour
             _runInput = false;
             _moveSpeed -= 2;
         }
+    }
+
+    public void OnPause(InputAction.CallbackContext ctx)
+    {
+        pauseUI.SetActive(!pauseUI.activeSelf);
+        TogglePause();
+    }
+
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+        Time.timeScale = isPaused ? 0f : 1f;
     }
 
     private void OnDrawGizmos()
