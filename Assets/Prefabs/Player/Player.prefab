@@ -470,7 +470,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f14a1242bf7d87b40897f1d268e60ccc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -542,9 +542,6 @@ MonoBehaviour:
   _moveSpeed: 3
   _jumpHeight: 7
   _animator: {fileID: 5610077224894220640}
-  _jumpCheckLayer:
-    serializedVersion: 2
-    m_Bits: 1048576
   _rayDistance: 0.6
 --- !u!210 &4022469800499961879
 SortingGroup:
