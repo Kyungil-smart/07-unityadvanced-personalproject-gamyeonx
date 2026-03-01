@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3285031163889679847}
+  - component: {fileID: 3421863426725473745}
   - component: {fileID: 8485290057876897345}
+  - component: {fileID: 4380831088458287570}
   m_Layer: 5
   m_Name: HP_Slider
   m_TagString: Untagged
@@ -38,6 +40,20 @@ RectTransform:
   m_AnchoredPosition: {x: -880, y: -530}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3421863426725473745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878129463088959134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0668bafc8e02bc44e89ba4b5f05913fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilderBarUI
+  _slider: {fileID: 8485290057876897345}
+  _fillImage: {fileID: 5236166530725907175}
 --- !u!114 &8485290057876897345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +105,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4380831088458287570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878129463088959134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0668bafc8e02bc44e89ba4b5f05913fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilderBarUI
+  _slider: {fileID: 8485290057876897345}
+  _fillImage: {fileID: 5236166530725907175}
 --- !u!1 &6366125094352785314
 GameObject:
   m_ObjectHideFlags: 0
