@@ -8,7 +8,6 @@ public class ArrowShot : MonoBehaviour
     public int Attack { get; set; }
 
 
-
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -18,5 +17,14 @@ public class ArrowShot : MonoBehaviour
     {
         Destroy(gameObject, 1.6f);
         _rigidbody.linearVelocity = new Vector2(transform.right.x * _arrowPower, _arrowPowerY);
+    }
+
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        IDamageable damageable = target.GetComponent<IDamageable>();
+        if(damageable != null)
+        {
+            damageable.TakeDamege(10);
+        }
     }
 }
