@@ -154,7 +154,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.57, y: 0.77}
+  m_Size: {x: 0.54, y: 0.77}
   m_EdgeRadius: 0
 --- !u!50 &7263445191522226273
 Rigidbody2D:
@@ -222,6 +222,7 @@ MonoBehaviour:
   - rid: 439764581300830534
   - rid: 439764581300830622
   - rid: 439764581300830623
+  - rid: 5086423286775284009
   m_OriginalGraph: {fileID: 0}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -252,6 +253,14 @@ MonoBehaviour:
           m_Value1: 12563806950772787910
         Name: AttackRange
         m_Value: 0.8
+    - rid: 5086423286775284009
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 4073070499344412638
+          m_Value1: 6965459926786283125
+        Name: AttackDelay
+        m_Value: 2
 --- !u!114 &7254908663106755215
 MonoBehaviour:
   m_ObjectHideFlags: 0

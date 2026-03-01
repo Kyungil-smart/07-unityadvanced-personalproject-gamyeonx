@@ -22,7 +22,7 @@ public partial class PatrolAction : Action
 
     private float _stuckTimer = 0f;
     private Vector2 _lastCheckedPos;
-    private const float StuckCheckInterval = 0.5f;
+    private const float StuckCheckInterval = 0.35f;
     private const float StuckThreshold = 0.05f;
 
     private Rigidbody2D _rb;
