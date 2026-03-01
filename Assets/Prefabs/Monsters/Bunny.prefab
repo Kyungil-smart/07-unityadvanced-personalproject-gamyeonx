@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7263445191522226273}
   - component: {fileID: 4520681411536277995}
   - component: {fileID: 5628420923039554104}
+  - component: {fileID: 7254908663106755215}
   m_Layer: 15
   m_Name: Bunny
   m_TagString: Untagged
@@ -251,3 +252,20 @@ MonoBehaviour:
           m_Value1: 12563806950772787910
         Name: AttackRange
         m_Value: 0.8
+--- !u!114 &7254908663106755215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642730534224920793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1691a96389f1f464eb6193f62f43e69d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonterSO
+  _type: {fileID: 11400000, guid: c76ccab1e888fa14595ca63c76266bb9, type: 2}
+  _hp: 0
+  _atk: 0
+  _prefab: {fileID: 4642730534224920793}
+  _expReward: 0
