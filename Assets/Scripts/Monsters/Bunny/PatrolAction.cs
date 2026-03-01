@@ -25,6 +25,8 @@ public partial class PatrolAction : Action
     private const float StuckCheckInterval = 0.5f;
     private const float StuckThreshold = 0.05f;
 
+    private Rigidbody2D _rb;
+
     protected override Status OnStart()
     {
         if (!_initialized)
@@ -32,6 +34,7 @@ public partial class PatrolAction : Action
             _startPos = Self.Value.transform.position;
             _lastCheckedPos = _startPos;
             _stuckTimer = 0f;
+            _rb = Self.Value.GetComponent<Rigidbody2D>();
             _initialized = true;
         }
         return Status.Running;
@@ -43,9 +46,9 @@ public partial class PatrolAction : Action
 
         if (distance > DetectRange.Value)
         {
-        Vector2 pos = Self.Value.transform.position;
-        float left = _startPos.x - PatrolDistance.Value;
-        float right = _startPos.x + PatrolDistance.Value;
+            Vector2 pos = Self.Value.transform.position;
+            float left = _startPos.x - PatrolDistance.Value;
+            float right = _startPos.x + PatrolDistance.Value;
 
             if (pos.x >= right) _dir = -1;
             if (pos.x <= left) _dir = 1;
@@ -65,8 +68,7 @@ public partial class PatrolAction : Action
             else
                 Self.Value.transform.rotation = Quaternion.Euler(0, 180, 0);
 
-            pos.x += _dir * MoveSpeed.Value * Time.deltaTime;
-            Self.Value.transform.position = pos;
+            _rb.linearVelocity = new Vector2(_dir * MoveSpeed.Value, _rb.linearVelocity.y);
 
             return Status.Success;
         }
