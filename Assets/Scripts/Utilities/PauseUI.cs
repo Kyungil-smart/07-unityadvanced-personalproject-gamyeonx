@@ -26,6 +26,7 @@ public class PauseUI : MonoBehaviour
 
     public void OnClickRetryGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
