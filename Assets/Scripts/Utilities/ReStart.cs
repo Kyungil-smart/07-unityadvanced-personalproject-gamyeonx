@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class ReStart : MonoBehaviour
 {
+    [SerializeField] private SilderBarUI _playerUI;
+
     private Button retryButton;
     private Button quitButton;
 
@@ -17,6 +19,11 @@ public class ReStart : MonoBehaviour
 
         if (quitButton != null)
             quitButton.onClick.AddListener(OnClickGameQuit);
+    }
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
     }
 
     public void OnClickRetryGame()

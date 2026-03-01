@@ -5,6 +5,8 @@ public class PlayerManager : MonoBehaviour, IDamageable
 {
     public static PlayerManager Instance { get; private set; }
 
+    [SerializeField] private GameObject retryUI;
+
     [SerializeField] private GameObject _player;
 
     [SerializeField] private int _maxHp;
@@ -109,5 +111,6 @@ public class PlayerManager : MonoBehaviour, IDamageable
     private void Die()
     {
         Destroy(_player);
+        retryUI.SetActive(true);
     }
 }
