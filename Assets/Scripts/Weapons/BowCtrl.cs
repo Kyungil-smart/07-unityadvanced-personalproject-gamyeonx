@@ -23,7 +23,8 @@ public class BowCtrl : MonoBehaviour
 
     public void AttackArrow(InputAction.CallbackContext ctx)
     {
-        if(ctx.started)
-        Instantiate(_arrowObject, transform.position, transform.rotation);
+        if (!ctx.started) return;
+        Vector3 backOffset = -transform.right * 0.3f;
+        Instantiate(_arrowObject, transform.position + backOffset, transform.rotation);
     }
 }
