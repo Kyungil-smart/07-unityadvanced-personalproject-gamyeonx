@@ -9120,6 +9120,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReStartUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6431262354246975433, guid: 0a3b8bd763aeb124c971f30655cf23c4, type: 3}
+      propertyPath: m_text
+      value: "\uC7AC\uC2DC\uC791"
+      objectReference: {fileID: 0}
     - target: {fileID: 8104247618044184505, guid: 0a3b8bd763aeb124c971f30655cf23c4, type: 3}
       propertyPath: m_Pivot.x
       value: 0

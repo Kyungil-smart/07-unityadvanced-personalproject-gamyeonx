@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class ReStart : MonoBehaviour
 {
-    [SerializeField] private SilderBarUI _playerUI;
-
     private Button retryButton;
     private Button quitButton;
 
