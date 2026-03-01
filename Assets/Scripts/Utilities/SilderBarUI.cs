@@ -12,11 +12,9 @@ public class SilderBarUI : MonoBehaviour
 
     void Update()
     {
-        // 테스트용: 키 누르면 HP 감소
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             _currentHP -= 20f;
-            Debug.Log($"currentHP: {_currentHP}");  // HP 줄어드는지
             SetHP(_currentHP, _maxHP);
         }
     }
@@ -24,10 +22,7 @@ public class SilderBarUI : MonoBehaviour
     public void SetHP(float current, float max)
     {
         float percent = current / max;
-        Debug.Log($"percent: {percent}");
         _slider.value = percent;
-        Debug.Log($"slider.value: {_slider.value}"); // 슬라이더 값 들어가는지
-        Debug.Log($"fillImage: {_fillImage}");
 
         if (percent > 0.6f)
             _fillImage.color = Color.green;

@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Collections;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, IDamageable
 {
     public static PlayerManager Instance { get; private set; }
+
+    [SerializeField] private GameObject _player;
 
     [SerializeField] private int _maxHp;
     private int _hp;
@@ -18,12 +21,18 @@ public class PlayerManager : MonoBehaviour
         get => _maxHp;
         set => _maxHp = Mathf.Max(value, 1);
     }
-    
+
     public int HP
     {
         get => _hp;
-        set => _hp = Mathf.Clamp(value, 0, _maxHp);
-    }    
+        set
+        {
+            _hp = Mathf.Clamp(value, 0, _maxHp);
+
+            if (_hp <= 0)
+                Die();
+        }
+    }
 
     public int MaxMP
     {
@@ -51,9 +60,11 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    private bool _invincibility = false;
+
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -63,9 +74,40 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        HP = _maxHp;
+        UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
+    }
+
     private void LevelUp()
     {
         _level++;
         _maxExp = _level * 100;
+    }
+
+    public void TakeDamege(int damage)
+    {
+        if (_invincibility) return;
+
+        HP -= damage;
+        UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
+
+        if (HP > 0)
+            StartCoroutine(InvincibilityCoroutine());
+        else
+            Die();
+    }
+
+    private IEnumerator InvincibilityCoroutine()
+    {
+        _invincibility = true;
+        yield return new WaitForSeconds(1f);
+        _invincibility = false;
+    }
+
+    private void Die()
+    {
+        Destroy(_player);
     }
 }
