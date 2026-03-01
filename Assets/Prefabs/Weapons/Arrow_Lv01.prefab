@@ -169,7 +169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArrowShot
   _arrowPower: 6
   _arrowPowerY: 2.8
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: -2808726874874092635}
+  _attack: 2
 --- !u!95 &461724725656456043
 Animator:
   serializedVersion: 7

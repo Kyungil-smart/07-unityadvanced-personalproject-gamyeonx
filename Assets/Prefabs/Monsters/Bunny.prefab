@@ -267,5 +267,5 @@ MonoBehaviour:
   _type: {fileID: 11400000, guid: c76ccab1e888fa14595ca63c76266bb9, type: 2}
   _hp: 0
   _atk: 0
-  _prefab: {fileID: 4642730534224920793}
   _expReward: 0
+  gameObject: {fileID: 4642730534224920793}

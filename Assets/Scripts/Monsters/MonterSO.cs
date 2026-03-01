@@ -1,3 +1,4 @@
+using UnityEditor.Search;
 using UnityEngine;
 
 public class MonterSO : MonoBehaviour, IDamageable
@@ -24,7 +25,7 @@ public class MonterSO : MonoBehaviour, IDamageable
     {
         _hp -= amount;
 
-        if (_hp < 0)
+        if (_hp <= 0)
         {
             Die();
         }

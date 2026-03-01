@@ -5,8 +5,7 @@ public class ArrowShot : MonoBehaviour
     [SerializeField] private int _arrowPower = 10;
     [SerializeField] private float _arrowPowerY = 5f;
     [SerializeField] private Rigidbody2D _rigidbody;
-    public int Attack { get; set; }
-
+    [SerializeField] private int _attack = 1;
 
     private void Awake()
     {
@@ -19,12 +18,15 @@ public class ArrowShot : MonoBehaviour
         _rigidbody.linearVelocity = new Vector2(transform.right.x * _arrowPower, _arrowPowerY);
     }
 
-    private void OnTriggerEnter2D(Collider2D target)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        IDamageable damageable = target.GetComponent<IDamageable>();
-        if(damageable != null)
+        if (collision.gameObject.layer != LayerMask.NameToLayer("Monster"))
+            return;
+
+        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            damageable.TakeDamege(10);
+            damageable.TakeDamege(_attack);
+            Destroy(gameObject);
         }
     }
 }

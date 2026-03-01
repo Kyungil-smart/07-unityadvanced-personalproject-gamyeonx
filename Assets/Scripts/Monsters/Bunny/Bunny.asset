@@ -16,5 +16,4 @@ MonoBehaviour:
   _name: Bunny
   _hp: 20
   _atk: 1
-  _prefab: {fileID: 0}
   _expReward: 20
