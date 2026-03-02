@@ -24,7 +24,8 @@ public class MonterSO : MonoBehaviour, IDamageable
 
         if (_hp <= 0)
         {
-            PlayerManager.Instance.GetExE(_expReward);
+            PlayerManager.Instance.GetExP(_expReward);
+            UI_Manager.Instance.UpdatePlayerEXP(PlayerManager.Instance.EXP, PlayerManager.Instance.MaxEXP);
             Die();
         }
     }

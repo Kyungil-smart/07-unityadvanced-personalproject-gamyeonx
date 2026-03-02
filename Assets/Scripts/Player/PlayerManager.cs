@@ -62,6 +62,12 @@ public class PlayerManager : MonoBehaviour, IDamageable
         }
     }
 
+    public int MaxEXP
+    {
+        get => _maxExp;
+        set => _maxExp = value;
+    }
+
     [SerializeField] private int _attack;
     public int Attack
     {
@@ -86,13 +92,16 @@ public class PlayerManager : MonoBehaviour, IDamageable
     private void Start()
     {
         HP = _maxHp;
+        MP = _maxMp;
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
+        UI_Manager.Instance.UpdatePlayerMP(MP, MaxMP);
+        UI_Manager.Instance.UpdatePlayerEXP(EXP, MaxEXP);
         UI_Manager.Instance.UpdateLevel(_level);
     }
 
-    public void GetExE(int exe)
+    public void GetExP(int exp)
     {
-        EXP += exe;
+        EXP += exp;
     }
 
     private void LevelUp()
@@ -102,11 +111,15 @@ public class PlayerManager : MonoBehaviour, IDamageable
         _level++;
         _maxExp = _level * 100;
 
-        MaxHP += 20;
+        MaxHP += 25;
         HP = MaxHP;
+        MaxMP += 25;
+        MP = MaxMP;
         Attack += 1;
 
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
+        UI_Manager.Instance.UpdatePlayerMP(MP, MaxMP);
+        UI_Manager.Instance.UpdatePlayerEXP(EXP, MaxEXP);
         UI_Manager.Instance.UpdateLevel(_level);
     }
 

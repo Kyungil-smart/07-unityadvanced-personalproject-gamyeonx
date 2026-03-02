@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
 
     [SerializeField] private SilderBarUI _hpUI;
     [SerializeField] private MpSilder _mpUI;
-    [SerializeField] private ExeSilder _exeUI;
+    [SerializeField] private ExpSlider _expUI;
     [SerializeField] private TMP_Text _levelText;
 
     private void Awake()
@@ -29,10 +29,11 @@ public class UI_Manager : MonoBehaviour
     }
     public void UpdatePlayerMP(float current, float max)
     {
-       
+        _mpUI.SetMP(current, max);
     }
-    public void UpdatePlayerEXE(float current, float max)
+    public void UpdatePlayerEXP(float current, float max)
     {
+        _expUI.SetEXP(current, max);
     }
 
     public void UpdateLevel(int Lv)
