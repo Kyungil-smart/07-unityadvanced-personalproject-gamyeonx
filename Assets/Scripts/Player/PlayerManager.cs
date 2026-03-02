@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
 
     private int _exp;
     [SerializeField] private int _maxExp = 100;
-    private int _level;
+    private int _level = 1;
 
     public int MaxHP
     {
@@ -87,6 +87,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
     {
         HP = _maxHp;
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
+        UI_Manager.Instance.UpdateLevel(_level);
     }
 
     public void GetExE(int exe)
@@ -96,6 +97,8 @@ public class PlayerManager : MonoBehaviour, IDamageable
 
     private void LevelUp()
     {
+        if (_level >= 99) return;
+
         _level++;
         _maxExp = _level * 100;
 
@@ -104,6 +107,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
         Attack += 1;
 
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
+        UI_Manager.Instance.UpdateLevel(_level);
     }
 
     public void TakeDamege(int damage)
