@@ -17,7 +17,7 @@ public class UI_Manager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     public void UpdatePlayerHP(float current, float max)

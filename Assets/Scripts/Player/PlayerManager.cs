@@ -73,7 +73,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
