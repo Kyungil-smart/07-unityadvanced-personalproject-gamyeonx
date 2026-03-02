@@ -11,9 +11,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7c241c4193a34447a673c18ee4be7c4, type: 3}
   m_Name: Bunny
-  m_EditorClassIdentifier: Assembly-CSharp::NewScriptableObjectScript
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterTypeSO
   _id: 1
   _name: Bunny
   _hp: 20
-  _atk: 1
+  _atk: 0
   _expReward: 20

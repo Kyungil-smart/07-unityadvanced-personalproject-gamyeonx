@@ -273,7 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1691a96389f1f464eb6193f62f43e69d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonterSO
-  _type: {fileID: 11400000, guid: c76ccab1e888fa14595ca63c76266bb9, type: 2}
+  _type: {fileID: 11400000, guid: 82d17a9f5bb4b254e9527ce9c7f5f196, type: 2}
   _hp: 0
-  _atk: 0
   _expReward: 0

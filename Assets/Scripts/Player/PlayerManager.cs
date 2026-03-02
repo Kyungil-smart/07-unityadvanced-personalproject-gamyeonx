@@ -62,6 +62,13 @@ public class PlayerManager : MonoBehaviour, IDamageable
         }
     }
 
+    [SerializeField] private int _attack;
+    public int Attack
+    {
+        get => _attack;
+        set => _attack = value;
+    }
+
     private bool _invincibility = false;
 
     private void Awake()
@@ -82,10 +89,21 @@ public class PlayerManager : MonoBehaviour, IDamageable
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
     }
 
+    public void GetExE(int exe)
+    {
+        EXP += exe;
+    }
+
     private void LevelUp()
     {
         _level++;
         _maxExp = _level * 100;
+
+        MaxHP += 20;
+        HP = MaxHP;
+        Attack += 1;
+
+        UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
     }
 
     public void TakeDamege(int damage)

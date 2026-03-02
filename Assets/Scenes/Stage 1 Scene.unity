@@ -9131,7 +9131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3123004499338821907, guid: 0a3b8bd763aeb124c971f30655cf23c4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6431262354246975433, guid: 0a3b8bd763aeb124c971f30655cf23c4, type: 3}
       propertyPath: m_text
@@ -9418,6 +9418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'PauseUI '
       objectReference: {fileID: 0}
+    - target: {fileID: 6693062090948598283, guid: 934d8ddf2e4e8244ea2f70a17b5b766b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9129771744646584352, guid: 934d8ddf2e4e8244ea2f70a17b5b766b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9619,6 +9623,10 @@ PrefabInstance:
     - target: {fileID: 3795730806023149953, guid: e9d45ed9aa5e7034bb529bf8e8f9af93, type: 3}
       propertyPath: _maxHp
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3795730806023149953, guid: e9d45ed9aa5e7034bb529bf8e8f9af93, type: 3}
+      propertyPath: _maxExp
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3795730806023149953, guid: e9d45ed9aa5e7034bb529bf8e8f9af93, type: 3}
       propertyPath: _player

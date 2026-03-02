@@ -5,7 +5,6 @@ public class ArrowShot : MonoBehaviour
     [SerializeField] private int _arrowPower = 10;
     [SerializeField] private float _arrowPowerY = 5f;
     [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private int _attack = 1;
 
     private void Awake()
     {
@@ -25,7 +24,7 @@ public class ArrowShot : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent(out IDamageable damageable))
         {
-            damageable.TakeDamege(_attack);
+            damageable.TakeDamege(PlayerManager.Instance.Attack);
             Destroy(gameObject);
         }
     }
