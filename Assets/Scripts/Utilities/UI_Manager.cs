@@ -7,8 +7,8 @@ public class UI_Manager : MonoBehaviour
     public static UI_Manager Instance { get; private set; }
 
     [SerializeField] private SilderBarUI _hpUI;
-    [SerializeField] private SilderBarUI _mpUI;
-    [SerializeField] private SilderBarUI _exeUI;
+    [SerializeField] private MpSilder _mpUI;
+    [SerializeField] private ExeSilder _exeUI;
     [SerializeField] private TMP_Text _levelText;
 
     private void Awake()
