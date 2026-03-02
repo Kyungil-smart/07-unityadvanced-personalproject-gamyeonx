@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class TitleSceneButton : MonoBehaviour
 {
+    [SerializeField] private AudioSource _uiSource;
+    [SerializeField] private AudioClip _uiClickSfx;
+
     private Button NewGame;
     private Button LoadGame;
     private Button Credits;
@@ -22,30 +25,43 @@ public class TitleSceneButton : MonoBehaviour
             LoadGame.onClick.AddListener(OnClickLoadGame);
 
         if (Credits != null)
-            NewGame.onClick.AddListener(OnClickCredits);
+            Credits.onClick.AddListener(OnClickCredits);
 
         if (Exit != null)
             Exit.onClick.AddListener(OnClickExit);
     }
     public void OnClickNewGame()
     {
-        SceneManager.LoadScene(1);
+        _uiSource.PlayOneShot(_uiClickSfx);
+        Invoke(nameof(Reload), 0.2f);
     }
 
     public void OnClickLoadGame()
     {
+        _uiSource.PlayOneShot(_uiClickSfx);
     }
 
     public void OnClickCredits()
     {
+        _uiSource.PlayOneShot(_uiClickSfx);
     }
 
     public void OnClickExit()
     {
+        _uiSource.PlayOneShot(_uiClickSfx);
+        Invoke(nameof(QuitGame), 0.2f);
+    }
+
+    private void Reload()
+    {
+        SceneManager.LoadScene(1);
+    }
+    private void QuitGame()
+    {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-                Application.Quit();
+    Application.Quit();
 #endif
     }
 }

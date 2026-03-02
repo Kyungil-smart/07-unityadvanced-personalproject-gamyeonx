@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class ReStart : MonoBehaviour
 {
+    [SerializeField] private AudioSource _uiSource;
+    [SerializeField] private AudioClip _uiClickSfx;
+
     private Button retryButton;
     private Button quitButton;
 
@@ -26,15 +29,27 @@ public class ReStart : MonoBehaviour
 
     public void OnClickRetryGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        _uiSource.PlayOneShot(_uiClickSfx);
+        Invoke(nameof(Reload), 0.2f);
     }
 
     public void OnClickGameQuit()
     {
+        _uiSource.PlayOneShot(_uiClickSfx);
+        Invoke(nameof(QuitGame), 0.2f);
+    }
+
+    private void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void QuitGame()
+    {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-                Application.Quit();
+    Application.Quit();
 #endif
     }
 }

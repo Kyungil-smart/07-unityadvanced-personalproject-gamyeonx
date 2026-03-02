@@ -12,10 +12,10 @@ public class FPSDisplay : MonoBehaviour
     void OnGUI()
     {
         GUIStyle style = new GUIStyle();
-        style.fontSize = 40; 
+        style.fontSize = 50; 
         style.normal.textColor = Color.white;
 
         float fps = 1.0f / _deltaTime;
-        GUI.Label(new Rect(10, 10, 400, 100), $"FPS: {Mathf.Ceil(fps)}", style);
+        GUI.Label(new Rect(1705, 30, 400, 100), $"FPS: {Mathf.Ceil(fps)}", style);
     }
 }
