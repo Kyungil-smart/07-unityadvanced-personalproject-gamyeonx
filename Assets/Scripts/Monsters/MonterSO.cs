@@ -7,6 +7,9 @@ public class MonterSO : MonoBehaviour, IDamageable
     [SerializeField] private int _hp;
     [SerializeField] private int _expReward;
 
+    [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioClip _sfxClip;
+
     private void Awake()
     {
         Init();
@@ -20,6 +23,8 @@ public class MonterSO : MonoBehaviour, IDamageable
 
     public void TakeDamege(int amount)
     {
+        _sfxSource.PlayOneShot(_sfxClip);
+
         _hp -= amount;
 
         if (_hp <= 0)

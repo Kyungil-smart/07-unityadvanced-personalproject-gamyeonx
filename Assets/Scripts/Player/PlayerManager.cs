@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class PlayerManager : MonoBehaviour, IDamageable
 {
@@ -77,6 +78,9 @@ public class PlayerManager : MonoBehaviour, IDamageable
 
     private bool _invincibility = false;
 
+    [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioClip _sfxClip;
+  
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -127,6 +131,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
     {
         if (_invincibility) return;
 
+        _sfxSource.PlayOneShot(_sfxClip);
         HP -= damage;
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
 

@@ -8,7 +8,10 @@ public class MonsterTypeSO : ScriptableObject
     public string _name;
     public int _hp;
     public int _atk;
-    
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip _sfxClip;
+
     [Header("보상 관련")]
 
     public int _expReward;

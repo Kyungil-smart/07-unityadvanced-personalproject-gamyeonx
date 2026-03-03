@@ -15,5 +15,7 @@ MonoBehaviour:
   _id: 1
   _name: Bunny
   _hp: 20
-  _atk: 0
+  _atk: 10
+  _sfxSource: {fileID: 0}
+  _sfxClip: {fileID: 8300000, guid: 0bddcb411d826e14bb26d40ae45d8e22, type: 3}
   _expReward: 20
