@@ -9442,7 +9442,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8921596737177584245, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5033730799472481989}
   m_SourcePrefab: {fileID: 100100000, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
 --- !u!1 &1460585750419216200 stripped
 GameObject:
@@ -9886,6 +9889,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3030920589253256220, guid: 83af420410ac3db45bb3d6f2c36c7bdf, type: 3}
   m_PrefabInstance: {fileID: 685667998473458019}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5033730799472481989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51499733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad1c818f21f2324e81afcdf4f2187a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitFlash
+  _hitFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  _colorChangeTime: 0.1
 --- !u!1001 &5112300908476542330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9926,6 +9943,10 @@ PrefabInstance:
       propertyPath: _sfxClip
       value: 
       objectReference: {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
+    - target: {fileID: 3795730806023149953, guid: e9d45ed9aa5e7034bb529bf8e8f9af93, type: 3}
+      propertyPath: _hitFlash
+      value: 
+      objectReference: {fileID: 5033730799472481989}
     - target: {fileID: 3795730806023149953, guid: e9d45ed9aa5e7034bb529bf8e8f9af93, type: 3}
       propertyPath: _sfxSource
       value: 

@@ -84,6 +84,8 @@ public class PlayerManager : MonoBehaviour, IDamageable
 
     [SerializeField] private GameObject _lvUp;
 
+    [SerializeField] private HitFlash _hitFlash;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -137,6 +139,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
     {
         if (_invincibility) return;
 
+        _hitFlash?.hitFlash();
         _sfxSource.PlayOneShot(_sfxClip[0]);
         HP -= damage;
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5628420923039554104}
   - component: {fileID: 7254908663106755215}
   - component: {fileID: 6445146474129721823}
+  - component: {fileID: 2491101678829981095}
   m_Layer: 15
   m_Name: Bunny
   m_TagString: Untagged
@@ -277,8 +278,9 @@ MonoBehaviour:
   _type: {fileID: 11400000, guid: 82d17a9f5bb4b254e9527ce9c7f5f196, type: 2}
   _hp: 0
   _expReward: 0
-  _sfxSource: {fileID: 6445146474129721823}
+  _sfxSource: {fileID: 0}
   _sfxClip: {fileID: 8300000, guid: 0bddcb411d826e14bb26d40ae45d8e22, type: 3}
+  _hitFlash: {fileID: 2491101678829981095}
 --- !u!82 &6445146474129721823
 AudioSource:
   m_ObjectHideFlags: 0
@@ -376,3 +378,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2491101678829981095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642730534224920793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad1c818f21f2324e81afcdf4f2187a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitFlash
+  _hitFlashColor: {r: 1, g: 0, b: 0, a: 1}
+  _colorChangeTime: 0.05
