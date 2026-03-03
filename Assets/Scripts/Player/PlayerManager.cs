@@ -79,7 +79,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
     private bool _invincibility = false;
 
     [SerializeField] private AudioSource _sfxSource;
-    [SerializeField] private AudioClip _sfxClip;
+    [SerializeField] private AudioClip[] _sfxClip;
   
     private void Awake()
     {
@@ -112,6 +112,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
     {
         if (_level >= 99) return;
 
+        _sfxSource.PlayOneShot(_sfxClip[1]);
         _level++;
         _maxExp = _level * 100;
 
@@ -131,7 +132,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
     {
         if (_invincibility) return;
 
-        _sfxSource.PlayOneShot(_sfxClip);
+        _sfxSource.PlayOneShot(_sfxClip[0]);
         HP -= damage;
         UI_Manager.Instance.UpdatePlayerHP(HP, MaxHP);
 
