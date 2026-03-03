@@ -1,6 +1,7 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Timeline;
 
 public class PlayerManager : MonoBehaviour, IDamageable
 {
@@ -80,7 +81,9 @@ public class PlayerManager : MonoBehaviour, IDamageable
 
     [SerializeField] private AudioSource _sfxSource;
     [SerializeField] private AudioClip[] _sfxClip;
-  
+
+    [SerializeField] private GameObject _lvUp;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -112,6 +115,8 @@ public class PlayerManager : MonoBehaviour, IDamageable
     {
         if (_level >= 99) return;
 
+        Vector3 backOffset = transform.up * 1.333f;
+        Instantiate(_lvUp, _player.transform.position + backOffset, _player.transform.rotation, _player.transform);
         _sfxSource.PlayOneShot(_sfxClip[1]);
         _level++;
         _maxExp = _level * 100;
