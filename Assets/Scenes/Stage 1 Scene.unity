@@ -1475,6 +1475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LvUP_Item
       objectReference: {fileID: 0}
+    - target: {fileID: 5414588662159041924, guid: 23d6ca9cec852aa458aa4d30052900ed, type: 3}
+      propertyPath: m_Layer
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 5745009943943005306, guid: 23d6ca9cec852aa458aa4d30052900ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 78.42
@@ -3121,6 +3125,10 @@ PrefabInstance:
     - target: {fileID: 1424383095653874445, guid: 2fad0ec419ab0b546a490f8d31499f05, type: 3}
       propertyPath: m_Name
       value: DarkWolf_2d_Grafics
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424383095653874445, guid: 2fad0ec419ab0b546a490f8d31499f05, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1718820313281118063, guid: 2fad0ec419ab0b546a490f8d31499f05, type: 3}
       propertyPath: m_LocalScale.x

@@ -56,7 +56,8 @@ public class PlayerManager : MonoBehaviour, IDamageable
         set
         {
             _exp = value;
-            if (_exp >= _maxExp)
+
+            while (_exp >= _maxExp)
             {
                 _exp -= _maxExp;
                 LevelUp();
