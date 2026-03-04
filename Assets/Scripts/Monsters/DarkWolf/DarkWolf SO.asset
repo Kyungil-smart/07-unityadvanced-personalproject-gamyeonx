@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterTypeSO
   _id: 2
   _name: DarkWolf
-  _hp: 200
+  _hp: 280
   _sfxClip: {fileID: 8300000, guid: 0bddcb411d826e14bb26d40ae45d8e22, type: 3}
   _expReward: 0
