@@ -44,6 +44,7 @@ public class TitleSceneButton : MonoBehaviour
     public void OnClickCredits()
     {
         _uiSource.PlayOneShot(_uiClickSfx);
+        Invoke(nameof(EndCredits), 0.2f);
     }
 
     public void OnClickExit()
@@ -56,6 +57,12 @@ public class TitleSceneButton : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    private void EndCredits()
+    {
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
+    }
+
     private void QuitGame()
     {
 #if UNITY_EDITOR

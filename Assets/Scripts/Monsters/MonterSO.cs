@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MonterSO : MonoBehaviour, IDamageable
 {
@@ -46,6 +47,11 @@ public class MonterSO : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        if (_category == MonsterCategory.Boss)
+        {
+            SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
+        }
+
         Destroy(gameObject);
     }
 }
