@@ -1,10 +1,13 @@
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class MonterSO : MonoBehaviour, IDamageable
 {
     public MonsterTypeSO _type;
 
+    [SerializeField] private MonsterCategory _category;
     [SerializeField] private int _hp;
+    [SerializeField] private int _maxhp;
     [SerializeField] private int _expReward;
 
     [SerializeField] private AudioSource _sfxSource;
@@ -19,7 +22,8 @@ public class MonterSO : MonoBehaviour, IDamageable
 
     public void Init()
     {
-        _hp = _type._hp;
+        _category = _type._category;
+        _hp = _type._maxhp;
         _expReward = _type._expReward;
     }
 
@@ -29,6 +33,9 @@ public class MonterSO : MonoBehaviour, IDamageable
         _sfxSource.PlayOneShot(_sfxClip);
 
         _hp -= amount;
+
+        if (_category == MonsterCategory.Boss)
+            UI_Manager.Instance.UpdateBossHP(_hp, _type._hp);
 
         if (_hp <= 0)
         {

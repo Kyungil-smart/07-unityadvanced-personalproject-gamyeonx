@@ -10,6 +10,7 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private MpSilder _mpUI;
     [SerializeField] private ExpSlider _expUI;
     [SerializeField] private TMP_Text _levelText;
+    [SerializeField] private Image _bossHpUI;
 
     private void Awake()
     {
@@ -39,5 +40,11 @@ public class UI_Manager : MonoBehaviour
     public void UpdateLevel(int Lv)
     {
         _levelText.text = "Lv " + Lv;
+    }
+
+    public void UpdateBossHP(float current, float max)
+    {
+        float percent = current / max;
+        _bossHpUI.fillAmount = percent;
     }
 }

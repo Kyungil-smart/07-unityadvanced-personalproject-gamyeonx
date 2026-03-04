@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c241c4193a34447a673c18ee4be7c4, type: 3}
   m_Name: Bunny
   m_EditorClassIdentifier: Assembly-CSharp::MonsterTypeSO
-  _id: 1
+  _category: 0
   _name: Bunny
   _hp: 20
-  _atk: 10
+  _maxhp: 20
   _sfxClip: {fileID: 8300000, guid: 0bddcb411d826e14bb26d40ae45d8e22, type: 3}
   _expReward: 20
