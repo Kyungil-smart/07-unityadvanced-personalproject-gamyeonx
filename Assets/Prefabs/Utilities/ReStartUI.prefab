@@ -467,6 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031f9d0805005bd44871c21fc70cb7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ReStart
+  _uiSource: {fileID: 0}
+  _uiClickSfx: {fileID: 8300000, guid: 4b294d59d2399014daa718b35c9de73b, type: 3}
 --- !u!1 &3737975625519533454
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC7AC\uC2DD\uC791"
+  m_text: "\uC7AC\uC2DC\uC791"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f853911c9e70f8e41877afccb6bb7c74, type: 2}
   m_sharedMaterial: {fileID: 6173081983938127091, guid: f853911c9e70f8e41877afccb6bb7c74, type: 2}

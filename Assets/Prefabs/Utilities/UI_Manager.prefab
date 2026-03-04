@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI_Manager
   _hpUI: {fileID: 7482390268470804238}
   _mpUI: {fileID: 2644293064455233576}
-  _expUI: {fileID: 0}
+  _expUI: {fileID: 883473025467022623}
   _levelText: {fileID: 4185006545072512084}
 --- !u!1 &495226861390241553
 GameObject:
@@ -839,6 +839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9143219498301124251}
   - component: {fileID: 7927529557463219087}
+  - component: {fileID: 883473025467022623}
   m_Layer: 5
   m_Name: EXP_Slider
   m_TagString: Untagged
@@ -918,6 +919,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &883473025467022623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3783079885599924350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 711735f2ec3f32b4cbc5ca8627162e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExpSlider
+  _expSlider: {fileID: 7927529557463219087}
 --- !u!1 &4067643779681108659
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class MonsterTypeSO : ScriptableObject
     public int _id;
     public string _name;
     public int _hp;
-    public int _atk;
 
     [Header("SFX")]
     [SerializeField] private AudioClip _sfxClip;

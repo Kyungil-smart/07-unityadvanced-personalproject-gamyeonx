@@ -44,6 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde500ff7801a454ca07e163f5a10fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  _maxHp: 0
-  _maxMp: 0
+  retryUI: {fileID: 0}
+  _player: {fileID: 0}
+  _maxHp: 50
+  _maxMp: 100
   _maxExp: 100
+  _attack: 1
+  _sfxSource: {fileID: 0}
+  _sfxClip:
+  - {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
+  - {fileID: 8300000, guid: 64795b87003c2324fa0814fbc336066c, type: 3}
+  _lvUp: {fileID: 6419988594951222794, guid: 7c940b215e7e0e54bb400fd8cff22e2f, type: 3}
+  _hitFlash: {fileID: 0}

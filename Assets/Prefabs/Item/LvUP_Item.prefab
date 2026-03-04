@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7196294066562757225}
   - component: {fileID: 7827114167680244640}
   - component: {fileID: 880431273995594305}
-  m_Layer: 0
+  - component: {fileID: 8297798496058465145}
+  - component: {fileID: 8631625169740418169}
+  m_Layer: 27
   m_Name: LvUP_Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,3 +163,29 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.15, y: 0.13}
   m_EdgeRadius: 0
+--- !u!210 &8297798496058465145
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414588662159041924}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_SortAtRoot: 0
+  m_Sort3DAs2D: 0
+--- !u!114 &8631625169740418169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414588662159041924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee7b3fc6ad52fa4eb04664a1355b9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LvItem
+  _addExp: 500
