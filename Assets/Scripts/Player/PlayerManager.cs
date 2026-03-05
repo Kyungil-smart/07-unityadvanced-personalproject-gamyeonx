@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour, IDamageable
     public static PlayerManager Instance { get; private set; }
 
     [SerializeField] private GameObject retryUI;
+    [SerializeField] private GameObject Dead;
 
     [SerializeField] private GameObject _player;
 
@@ -160,6 +161,8 @@ public class PlayerManager : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        _sfxSource.PlayOneShot(_sfxClip[2]);
+        Instantiate(Dead, _player.transform.position, _player.transform.rotation);
         Destroy(_player);
         retryUI.SetActive(true);
     }
