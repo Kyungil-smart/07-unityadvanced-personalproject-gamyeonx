@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        _jumpCheckLayer = LayerMask.GetMask("Ground", "Monster");
+        _jumpCheckLayer = LayerMask.GetMask("Ground", "Monster", "Gimmick");
     }
 
     private void FixedUpdate()

@@ -10,5 +10,6 @@ public class DwHpTrigger : MonoBehaviour
             return;
 
         _bossHp.SetActive(!_bossHp.activeSelf);
+        Destroy(gameObject);
     }
 }
