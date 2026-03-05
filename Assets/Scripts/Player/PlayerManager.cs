@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 public class PlayerManager : MonoBehaviour, IDamageable
@@ -165,5 +166,22 @@ public class PlayerManager : MonoBehaviour, IDamageable
         Instantiate(Dead, _player.transform.position, _player.transform.rotation);
         Destroy(_player);
         retryUI.SetActive(true);
+    }
+
+    public void OnItemCollected()
+    {
+        Invoke(nameof(WinSFX),1.5f);
+        Invoke(nameof(GoNextScene), 3f);
+    }
+
+    private void GoNextScene()
+    {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIndex + 1);
+    }
+
+    private void WinSFX()
+    {
+        _sfxSource.PlayOneShot(_sfxClip[3]);
     }
 }

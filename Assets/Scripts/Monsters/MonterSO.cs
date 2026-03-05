@@ -15,6 +15,8 @@ public class MonterSO : MonoBehaviour, IDamageable
 
     [SerializeField] private HitFlash _hitFlash;
 
+    [SerializeField] private GameObject Item;
+
     private void Awake()
     {
         Init();
@@ -49,7 +51,7 @@ public class MonterSO : MonoBehaviour, IDamageable
     {
         if (_category == MonsterCategory.Boss)
         {
-            SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
+            Instantiate(Item, transform.position, transform.rotation);
         }
 
         Destroy(gameObject);

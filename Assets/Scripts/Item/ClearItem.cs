@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class LvItem : MonoBehaviour
+public class ClearItem : MonoBehaviour
 {
-   [SerializeField] private int _addExp = 700;
+    [SerializeField] private int _addExp = 2000;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -10,6 +10,7 @@ public class LvItem : MonoBehaviour
             return;
 
         PlayerManager.Instance.EXP += _addExp;
+        PlayerManager.Instance.OnItemCollected();
         Destroy(gameObject);
     }
 }
